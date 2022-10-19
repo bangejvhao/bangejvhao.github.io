@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>http://666666000.xyz</id>
+    <title>ChenHuaibo&apos;s Blog</title>
+    <updated>2022-10-19T11:01:42.051Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="http://666666000.xyz"/>
+    <link rel="self" href="http://666666000.xyz/atom.xml"/>
+    <subtitle>欢迎访问陈怀博的博客</subtitle>
+    <logo>http://666666000.xyz/images/avatar.png</logo>
+    <icon>http://666666000.xyz/favicon.ico</icon>
+    <rights>All rights reserved 2022, ChenHuaibo&apos;s Blog</rights>
+    <entry>
+        <title type="html"><![CDATA[角谷猜想]]></title>
+        <id>http://666666000.xyz/post/jiao-gu-cai-xiang/</id>
+        <link href="http://666666000.xyz/post/jiao-gu-cai-xiang/">
+        </link>
+        <updated>2022-03-31T14:15:20.000Z</updated>
+        <summary type="html"><![CDATA[<p>题目：<br>
+角谷静夫是日本的一位著名学者，他提出了一个猜想（称为角谷猜想）：对于一个正整数 n，若为偶数则除以 2，若为奇数则乘以 3 加 1，得到一个新的数后按照之前的两条规则继续演算，若干次后得到的结果必然为 1。输入任一正整数，输出演算过程。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>题目：<br>
+角谷静夫是日本的一位著名学者，他提出了一个猜想（称为角谷猜想）：对于一个正整数 n，若为偶数则除以 2，若为奇数则乘以 3 加 1，得到一个新的数后按照之前的两条规则继续演算，若干次后得到的结果必然为 1。输入任一正整数，输出演算过程。</p>
+<!-- more -->
+<p>[输入样例]<br>
+10<br>
+[输出样例]<br>
+10/2=5<br>
+5*3+1=16<br>
+16/2=8<br>
+8/2=4<br>
+4/2=2<br>
+2/2=1</p>
+<p>Python代码：</p>
+<pre><code>print(&quot;请输入一个正整数&quot;)
+n=eval(input())
+while n !=1 :
+    if n%2==0 :
+        print(&quot;%d/2=%d&quot;%(n,n/2))
+        n=n/2
+    elif n%2==1 :
+        print(&quot;%d*3+1=%d&quot;%(n,n*3+1))
+        n=n*3+1
+</code></pre>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[华氏度转为摄氏度]]></title>
+        <id>http://666666000.xyz/post/hua-shi-du-zhuan-wei-she-shi-du/</id>
+        <link href="http://666666000.xyz/post/hua-shi-du-zhuan-wei-she-shi-du/">
+        </link>
+        <updated>2022-03-31T14:00:44.000Z</updated>
+        <summary type="html"><![CDATA[<p>题目：<br>
+按公式：C= 5/9×(F-32) ，将华氏温度转换成摄氏温度，并产生一张华氏 0～300 度与对应的摄氏温度之间的对照表（每隔 20 度输出一次）</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>题目：<br>
+按公式：C= 5/9×(F-32) ，将华氏温度转换成摄氏温度，并产生一张华氏 0～300 度与对应的摄氏温度之间的对照表（每隔 20 度输出一次）</p>
+<!-- more -->
+<p>代码：<br>
+Python代码：</p>
+<pre><code>F=0
+print(&quot; °F       °C&quot;)
+for F in range(0,301,20):
+    C=5/9*(F-32)
+    print(&quot;%3.0f    %7.3f&quot; %(F,C))
+</code></pre>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[身体质量指数BMI的计算]]></title>
+        <id>http://666666000.xyz/post/shen-ti-zhi-liang-zhi-shu-bmi-de-ji-suan/</id>
+        <link href="http://666666000.xyz/post/shen-ti-zhi-liang-zhi-shu-bmi-de-ji-suan/">
+        </link>
+        <updated>2022-03-31T13:55:08.000Z</updated>
+        <summary type="html"><![CDATA[<p>题目：<br>
+BMI的计算公式为：BMI=体重/身高的平方（国际单位 kg/㎡）。中国的成年人BMI 数值定义为：</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>题目：<br>
+BMI的计算公式为：BMI=体重/身高的平方（国际单位 kg/㎡）。中国的成年人BMI 数值定义为：</p>
+<!-- more -->
+<p>过轻：低于 18.5<br>
+正常：18.5-23.9<br>
+过重：24-27.9<br>
+肥胖：高于 28<br>
+请输入体重和身高，输出相应的 BMI 值和体重肥胖程度判断结果（too thin、normal、overweight 或 fat)。<br>
+[输入样例]<br>
+60,1.6<br>
+[输出样例]<br>
+Your BMI is 23.4<br>
+normal<br>
+[提示]<br>
+程序中体重和身高的输入可用“weight, height = eval(input())”语句表示。</p>
+<p>Python代码：</p>
+<pre><code>print(&quot;请输入您的体重（kg）和身高（m），用英文逗号分隔开&quot;)
+weight,height=eval(input())
+BMI=weight/(height**2)
+print(&quot;Your BMI is %2.1f&quot; %BMI)
+if BMI&gt;28:
+    print(&quot;fat&quot;)
+elif 24&lt;BMI&lt;27.9:
+    print(&quot;overweight&quot;)
+elif 18.5&lt;BMI&lt;23.9:
+    print(&quot;normal&quot;)
+elif BMI&lt;18.5:
+    print(&quot;too thin&quot;)
+</code></pre>
+]]></content>
+    </entry>
+</feed>
